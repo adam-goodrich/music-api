@@ -4,13 +4,13 @@ async function geniusSearch(event) {
   event.preventDefault();
   const searchValue = document.getElementById("search").value;
   sParameter = encodeURIComponent(searchValue.trim());
-  const searchUrl = `https://genius.com/search?q=${sParameter}`;
+  const searchUrl = `https://api.genius.com/artists/16775`;
   const response = await fetch(searchUrl, {
     headers: {
+      "Content-Type": "application/json",
       mode: "no-cors",
-
-      Authentication:
-        "Bearer xAX6kOkO7h-32Gdwa0Q1g3QzUjs5BfsOs-fmv1FsX98XFVp3rXJB7iwGIfBpZxdlMJ-AQ_nZmd4PjuvMi7jSZg",
+      Authorization:
+        "Bearer JaCSoPYc_QdpfOK7xRTmopHP1Im6B-NtzF_o-4VxlPNo1dOcoI3puM7ZlnF4zIXS",
     },
   });
   const data = await response.json();
